@@ -2,7 +2,7 @@ $(function(){
 	var carousel = $("#carousel");
 	var carouselList = carousel.find('.photo');
 	var carouselMenu = carousel.find('.menu');
-	var currentSlide = 1;
+
 	carouselList.find('li').each(function() {
 		carouselMenu.append('<li></li>');
 	});
@@ -19,23 +19,19 @@ $(function(){
 		var position = -400 * target;
 		carouselList.stop().animate({'left':position});
 		doc.removeClass('active').eq(target).addClass('active');
-		currentSlide = target;
+
 	}
 
-	function animateSlide() {
-		carouselList.animate({'margin-left': '-=400px'}, 1000, moveFirstSlide());
-	}
+	carousel.find('.carousel-arrow-left').click(function() {
+		target = doc.siblings('.active').index();
+		target == 0 ? target = doc.length - 1 : target -= 1;
+		changeSlide(target);
+		console.log(target);
+	});
 
-	function moveFirstSlide() {
-		currentSlide++;
-		if(currentSlide === 5) {
-			currentSlide = 1;
-			carouselList.css({marginLeft:0});
-		}
-		console.log(currentSlide);
-	}
-
-	setInterval(animateSlide, 3000);
+	carousel.find('.carousel-arrow-right').click(function() {
+		console.log('2');
+	});
 
 	//setInterval
 

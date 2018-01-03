@@ -30,3 +30,12 @@
 .menu .active {
 	background-color: red;
 }
+.fa {
+	position: absolute;
+}
+.fa-arrow-left {
+	left: 0;
+}
+.fa-arrow-right {
+	left: 20px;
+}
