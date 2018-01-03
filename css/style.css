@@ -4,13 +4,29 @@
 	height: 300px;
 	border: 1px solid blue;
 	overflow: hidden;
+	position: relative;
 }
-ul {
+.photo {
 	width: 2000px;
 	text-decoration: none;
 	padding: 0;
+	position: absolute;
 }
-li {
+.photo li {
 	list-style-type: none;
 	float: left;
+}
+.menu {
+	position: absolute;
+}
+.menu li {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin: 5px;
+	background-color: yellow;
+	border-radius: 50%;
+}
+.menu .active {
+	background-color: red;
 }
