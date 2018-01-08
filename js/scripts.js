@@ -30,34 +30,13 @@ $(function(){
 	});
 
 	carousel.find('.carousel-arrow-right').click(function() {
-		console.log('2');
+		target = doc.siblings('.active').index();
+		target == doc.length - 1 ? target = 0 : target += 1;
+		changeSlide(target);
+		console.log(target);
 	});
 
-	//setInterval
-
-	//starzałka target+1 -1
-
-
-
-
-
-
-
-
-
-	/*var carouselList = $("#carousel ul");
-
-	function changeSlide() {
-		carouselList.animate({'marginLeft':-400}, 500, moveFirstSlide);
-	};
-
-	function moveFirstSlide() {
-		var firstItem = carouselList.find("li:first");
-		var lastItem = carouselList.find("li:last");
-		lastItem.after(firstItem);
-		carouselList.css({marginLeft:0});
-	}
-	setInterval(changeSlide, 3000);*/
+	var autoMove = setInterval(function(target) {changeSlide()}, 3000);
 });
 
 
